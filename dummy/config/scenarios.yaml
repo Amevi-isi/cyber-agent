@@ -1,0 +1,132 @@
+scenarios:
+  ransomware_lockbit:
+    name: "Ransomware LockBit Attack"
+    description: "Complete ransomware attack lifecycle from initial access to data encryption"
+    timeline_minutes: 60
+    steps:
+      - source: "suricata"
+        event: "c2_beaconing"
+        offset_minutes: 0
+      - source: "wazuh"
+        event: "ssh_brute_force"
+        offset_minutes: 5
+      - source: "wazuh"
+        event: "ssh_login_success"
+        offset_minutes: 10
+      - source: "edr"
+        event: "powershell_encoded"
+        offset_minutes: 15
+      - source: "ad"
+        event: "user_created"
+        offset_minutes: 20
+      - source: "ad"
+        event: "privilege_escalation"
+        offset_minutes: 25
+      - source: "edr"
+        event: "malware_download"
+        offset_minutes: 30
+      - source: "edr"
+        event: "malware_execution"
+        offset_minutes: 35
+      - source: "wazuh"
+        event: "file_encryption"
+        offset_minutes: 40
+      - source: "suricata"
+        event: "data_exfiltration"
+        offset_minutes: 45
+      - source: "fortigate"
+        event: "c2_blocked"
+        offset_minutes: 50
+      - source: "iris"
+        event: "case_opened"
+        offset_minutes: 55
+
+  phishing_bec:
+    name: "Business Email Compromise"
+    description: "Phishing attack leading to business email compromise"
+    timeline_minutes: 180
+    steps:
+      - source: "misp"
+        event: "new_ioc"
+        offset_minutes: 0
+      - source: "fortigate"
+        event: "email_received"
+        offset_minutes: 120
+      - source: "edr"
+        event: "link_clicked"
+        offset_minutes: 125
+      - source: "suricata"
+        event: "dns_query_suspicious"
+        offset_minutes: 126
+      - source: "edr"
+        event: "malware_download"
+        offset_minutes: 127
+      - source: "edr"
+        event: "process_injection"
+        offset_minutes: 130
+      - source: "ad"
+        event: "anormal_login"
+        offset_minutes: 135
+      - source: "wazuh"
+        event: "email_scan"
+        offset_minutes: 140
+      - source: "fortigate"
+        event: "email_exfiltration"
+        offset_minutes: 150
+
+  insider_threat:
+    name: "Insider Threat Data Exfiltration"
+    description: "Employee data exfiltration using USB and cloud storage"
+    timeline_minutes: 60
+    steps:
+      - source: "wazuh"
+        event: "dlp_high_volume"
+        offset_minutes: 0
+      - source: "wazuh"
+        event: "usb_connected"
+        offset_minutes: 5
+      - source: "edr"
+        event: "file_copy_to_removable"
+        offset_minutes: 10
+      - source: "fortigate"
+        event: "cloud_upload"
+        offset_minutes: 15
+      - source: "wazuh"
+        event: "email_external"
+        offset_minutes: 20
+      - source: "ad"
+        event: "after_hours_login"
+        offset_minutes: 25
+      - source: "wazuh"
+        event: "mass_printing"
+        offset_minutes: 30
+
+  apt_lateral_movement:
+    name: "APT Lateral Movement"
+    description: "Advanced persistent threat with lateral movement"
+    timeline_minutes: 240
+    steps:
+      - source: "suricata"
+        event: "initial_access"
+        offset_minutes: 0
+      - source: "edr"
+        event: "initial_implant"
+        offset_minutes: 15
+      - source: "wazuh"
+        event: "privilege_escalation"
+        offset_minutes: 30
+      - source: "ad"
+        event: "kerberoasting"
+        offset_minutes: 60
+      - source: "edr"
+        event: "lateral_movement_psexec"
+        offset_minutes: 90
+      - source: "edr"
+        event: "credential_dumping"
+        offset_minutes: 120
+      - source: "fortigate"
+        event: "data_staging"
+        offset_minutes: 180
+      - source: "suricata"
+        event: "exfiltration"
+        offset_minutes: 210

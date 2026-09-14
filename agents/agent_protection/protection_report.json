@@ -1,0 +1,41 @@
+{
+  "urgency": "immediate",
+  "firewall_rules": [
+    {
+      "action": "block",
+      "direction": "inbound",
+      "src_ip": "185.220.101.5",
+      "dst_port": null,
+      "protocol": "any",
+      "reason": "Blocking Tor exit node IP from brute force SSH attack"
+    }
+  ],
+  "edr_actions": [
+    {
+      "action": "isolate",
+      "asset": "server1",
+      "reason": "Isolating server1 to prevent further lateral movement"
+    },
+    {
+      "action": "isolate",
+      "asset": "root",
+      "reason": "Isolating root account on server1 to prevent further unauthorized access"
+    }
+  ],
+  "account_actions": [
+    {
+      "action": "disable",
+      "user": "root",
+      "reason": "Disabling root account on server1 to prevent further unauthorized access"
+    }
+  ],
+  "network_segments_to_block": [],
+  "monitoring_rules": [
+    {
+      "signature": "SSH brute force attempt from Tor exit node",
+      "trigger": "47 failed SSH attempts in a short period",
+      "reason": "Monitoring for further SSH brute force attacks from the same IP"
+    }
+  ],
+  "containment_summary": "Immediate isolation of server1 and root account, blocking Tor exit node IP, disabling root account, and monitoring for further SSH brute force attacks."
+}

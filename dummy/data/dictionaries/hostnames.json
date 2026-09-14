@@ -1,0 +1,19 @@
+{
+  "hostnames": [
+    "srv-web-prod-01", "srv-web-prod-02", "srv-app-prod-01", "srv-db-prod-01",
+    "srv-filesrv-01", "srv-backup-01", "srv-mail-01", "srv-vpn-01",
+    "wk-station-hr-01", "wk-station-hr-02", "wk-station-hr-03", "wk-station-hr-04",
+    "wk-station-hr-05", "wk-station-it-01", "wk-station-it-02", "wk-station-it-03",
+    "wk-station-fin-01", "wk-station-fin-02", "wk-station-fin-03",
+    "DC01", "DC02", "DC03", "FW-PRD-01", "FW-PRD-02",
+    "SW-CORE-01", "SW-DIST-01", "LB-PRD-01"
+  ],
+  "domains": [
+    "corp.local"
+  ],
+  "internal_ip_ranges": [
+    {"network": "192.168.10.0/24", "description": "Servers"},
+    {"network": "192.168.1.0/24", "description": "Workstations"},
+    {"network": "10.0.1.0/24", "description": "DMZ"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "rules": [
+    {"id": "5710", "level": 3, "description": "sshd: authentication failed", "groups": ["authentication", "sshd"], "mitre": ["T1110"]},
+    {"id": "5712", "level": 5, "description": "sshd: authentication success", "groups": ["authentication", "sshd"], "mitre": ["T1078"]},
+    {"id": "5715", "level": 10, "description": "sshd: brute force trying to get access to the system", "groups": ["authentication", "attack_attempt"], "mitre": ["T1110"]},
+    {"id": "5720", "level": 12, "description": "sshd: external user login success", "groups": ["authentication", "attack_success"], "mitre": ["T1078"]},
+    {"id": "100002", "level": 10, "description": "Suspicious process execution", "groups": ["process", "suspicious"], "mitre": ["T1059"]},
+    {"id": "100003", "level": 12, "description": "PowerShell encoded command execution", "groups": ["powershell", "execution"], "mitre": ["T1059.001"]},
+    {"id": "100010", "level": 15, "description": "Malware detected", "groups": ["malware", "trojan"], "mitre": ["T1566"]},
+    {"id": "100020", "level": 12, "description": "File created in system directory", "groups": ["file", "integrity"], "mitre": ["T1547"]},
+    {"id": "100025", "level": 10, "description": "Registry key modified", "groups": ["registry", "persistence"], "mitre": ["T1547.001"]},
+    {"id": "100030", "level": 14, "description": "Multiple file extension detected", "groups": ["malware", "execution"], "mitre": ["T1566"]},
+    {"id": "100035", "level": 12, "description": "Suspicious file download", "groups": ["network", "malware"], "mitre": ["T1566"]},
+    {"id": "100040", "level": 10, "description": "High number of logs deleted", "groups": ["defense_evasion", "logs"], "mitre": ["T1070"]},
+    {"id": "100050", "level": 15, "description": "Ransomware pattern detected", "groups": ["malware", "ransomware"], "mitre": ["T1486"]},
+    {"id": "100100", "level": 7, "description": "New service installed", "groups": ["persistence", "service"], "mitre": ["T1543"]},
+    {"id": "100101", "level": 12, "description": "Service started by suspicious process", "groups": ["persistence", "service"], "mitre": ["T1543"]},
+    {"id": "100200", "level": 8, "description": "User added to domain group", "groups": ["account", "group_modification"], "mitre": ["T1069"]},
+    {"id": "100201", "level": 12, "description": "User added to Domain Admins group", "groups": ["account", "privilege_escalation"], "mitre": ["T1069.002"]},
+    {"id": "100210", "level": 10, "description": "Account password changed", "groups": ["account", "modification"], "mitre": ["T1110"]},
+    {"id": "100220", "level": 8, "description": "Unusual hour login", "groups": ["authentication", "anomaly"], "mitre": ["T1078"]},
+    {"id": "100230", "level": 14, "description": "Massive file deletion detected", "groups": ["impact", "destruction"], "mitre": ["T1485"]}
+  ],
+  "decoders": [
+    "sshd", "vsftpd", "pam", "windows_eventchannel", "syslog", "apache", "nginx", "mysql", "postgresql"
+  ],
+  "log_locations": [
+    "/var/log/auth.log", "/var/log/secure", "/var/log/messages", "/var/log/syslog",
+    "C:\\Windows\\System32\\winevt\\Logs\\Security.evtx",
+    "C:\\Windows\\System32\\winevt\\Logs\\System.evtx"
+  ]
+}

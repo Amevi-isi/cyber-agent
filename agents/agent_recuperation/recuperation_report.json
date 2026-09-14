@@ -1,0 +1,75 @@
+{
+  "restoration_checklist": [
+    {
+      "step": 1,
+      "action": "Verify SSH access to server1",
+      "asset": "server1",
+      "responsible": "SOC",
+      "verified": false
+    },
+    {
+      "step": 2,
+      "action": "Update root's password on server1",
+      "asset": "server1",
+      "responsible": "SOC",
+      "verified": false
+    },
+    {
+      "step": 3,
+      "action": "Re-enable SSH access to server1 for root",
+      "asset": "server1",
+      "responsible": "SOC",
+      "verified": false
+    }
+  ],
+  "eradication_steps": [
+    {
+      "step": 1,
+      "action": "Remove any malware or backdoors from server1",
+      "asset": "server1",
+      "responsible": "SOC"
+    }
+  ],
+  "verification_steps": [
+    {
+      "step": 1,
+      "action": "Conduct a thorough vulnerability scan on server1",
+      "asset": "server1",
+      "responsible": "SOC",
+      "verified": false
+    },
+    {
+      "step": 2,
+      "action": "Verify the integrity of system files and configuration on server1",
+      "asset": "server1",
+      "responsible": "SOC",
+      "verified": false
+    }
+  ],
+  "monitoring_recommendations": [
+    {
+      "rule": "Monitor SSH logs for suspicious activity",
+      "duration": "Ongoing",
+      "threshold": "Threshold: 5 failed login attempts within 1 minute"
+    }
+  ],
+  "estimated_recovery_time": {
+    "total": "TBD",
+    "by_asset": [
+      {
+        "asset": "server1",
+        "ert": "TBD"
+      }
+    ]
+  },
+  "lessons_learned": {
+    "what_worked": [
+      "Iris and Fortigate response actions were successful in containing the threat"
+    ],
+    "what_failed": [],
+    "improvements": [
+      "Consider implementing additional SSH access controls, such as multi-factor authentication"
+    ]
+  },
+  "recovery_summary": "Incident recovery plan: Restore affected systems/services to normal operation by verifying SSH access, updating passwords, and removing malware. Confirm systems are clean through vulnerability scans and integrity checks. Monitor for suspicious activity after recovery."
+}

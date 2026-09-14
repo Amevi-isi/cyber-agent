@@ -1,0 +1,102 @@
+# SOC Analysis Report
+
+## Event Analysis
+| Field | Details |
+|-------|---------|
+| **Source** | Suricata IDS |
+| **Alert** | ET SCAN Nmap |
+| **Source IP** | 192.168.1.15 |
+| **Raw Severity** | 2 |
+
+---
+
+## 🔍 Analysis
+
+### 1. Malicious Determination
+> **⚠️ POTENTIALLY MALICIOUS**
+
+The alert `ET SCAN Nmap` indicates **active network reconnaissance** originating from an **internal IP address** (`192.168.1.15`). This is suspicious because:
+- Nmap scanning from an internal host suggests either a **compromised internal machine** or an **insider threat**
+- Reconnaissance is typically the **first phase** of the cyber kill chain
+- No prior events exist, but this could be the beginning of a larger attack sequence
+
+---
+
+### 2. 🎯 Attack Type
+**Network Reconnaissance / Port Scanning**
+- **Category:** Pre-Attack Reconnaissance
+- **Tool Identified:** `Nmap` (Network Mapper)
+- **Tactic (MITRE ATT&CK):** `TA0043 - Reconnaissance`
+- **Technique:** `T1046 - Network Service Discovery`
+
+---
+
+### 3. 🚨 Severity: **MEDIUM**
+
+**Rationale:**
+- Internal source increases suspicion (lateral movement risk)
+- Scanning alone is not immediately destructive
+- Escalation potential is high if followed by exploitation attempts
+
+---
+
+## 📋 Recommended Actions
+1. **Isolate** `192.168.1.15` for investigation
+2. **Review** process/user activity on the source host
+3. **Monitor** for follow-up alerts (exploitation, lateral movement)
+4. **Check** if this host is authorized for security scanning (e.g., pentest activity)
+****************************************************************************************************
+# SOC Analysis Report
+
+## Event Correlation Analysis
+
+### Events Under Review
+| # | Source | Event | Asset/IP |
+|---|--------|-------|----------|
+| 1 | Suricata | ET SCAN Nmap | 192.168.1.15 |
+| 2 | Wazuh | Multiple Failed SSH Login | server1 |
+
+---
+
+## 🔴 Verdict: MALICIOUS
+
+### Reasoning
+
+The combination of these two events forms a **clear attack pattern**:
+
+1. **Event 1 - Nmap Scan**: The source IP `192.168.1.15` performed network reconnaissance to identify open ports/services (including SSH port 22).
+2. **Event 2 - SSH Brute Force**: Following the scan, multiple failed SSH login attempts are detected on `server1` — consistent with an **automated brute-force attack** targeting discovered SSH services.
+
+> ⚠️ This is a **classic Reconnaissance → Exploitation sequence** (MITRE ATT&CK).
+
+---
+
+## Attack Classification
+
+| Field | Detail |
+|-------|--------|
+| **Attack Type** | SSH Brute Force / Credential Stuffing |
+| **MITRE ATT&CK** | T1046 (Network Scanning) → T1110 (Brute Force) |
+| **Kill Chain Stage** | Reconnaissance → Initial Access |
+| **Suspected Threat Actor** | Internal or external attacker from `192.168.1.15` |
+
+---
+
+## Severity: 🔴 HIGH
+
+**Justification:**
+- Active brute-force following deliberate reconnaissance
+- `server1` is a direct target — potential unauthorized access risk
+- Coordinated multi-stage attack behavior
+- If SSH login succeeds → full system compromise possible
+
+---
+
+## Recommended Actions
+
+- [ ] **Block** `192.168.1.15` at firewall immediately
+- [ ] **Investigate** `server1` for any successful SSH logins
+- [ ] **Check** auth logs: `/var/log/auth.log`
+- [ ] **Enable** fail2ban or equivalent on all SSH services
+- [ ] **Escalate** to Incident Response team
+- [ ] **Audit** SSH keys and credentials on `server1`

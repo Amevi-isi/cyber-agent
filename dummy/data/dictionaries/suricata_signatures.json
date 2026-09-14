@@ -1,0 +1,39 @@
+{
+  "signatures": [
+    {"id": 2010001, "rev": 4, "category": "Attempted Information Leak", "severity": 2, "signature": "ET SCAN Potential SSH Scan"},
+    {"id": 2010002, "rev": 3, "category": "Attempted Information Leak", "severity": 2, "signature": "ET SCAN Potential SSH Bruteforce"},
+    {"id": 2010100, "rev": 5, "category": "Attempted Admin Privilege Gain", "severity": 3, "signature": "ET WEB_SERVER SQL Injection Attempt"},
+    {"id": 2010110, "rev": 2, "category": "Attempted Admin Privilege Gain", "severity": 3, "signature": "ET WEB_SERVER XSS Attempt"},
+    {"id": 2013026, "rev": 5, "category": "Malware Command and Control Activity", "severity": 1, "signature": "ET MALWARE Possible C2 SSL Cert"},
+    {"id": 2013501, "rev": 3, "category": "Malware Command and Control Activity", "severity": 1, "signature": "ET MALWARE LockBit Ransomware TLS Pattern"},
+    {"id": 2013502, "rev": 2, "category": "Malware Command and Control Activity", "severity": 1, "signature": "ET MALWARE Emotet C2 Traffic Pattern"},
+    {"id": 2013503, "rev": 4, "category": "Malware Command and Control Activity", "severity": 1, "signature": "ET MALWARE TrickBot C2 Beacon"},
+    {"id": 2014001, "rev": 6, "category": "Exploit Kit Activity", "severity": 2, "signature": "ET EXPLOIT Kit Detected"},
+    {"id": 2014501, "rev": 3, "category": "Attempted Information Leak", "severity": 2, "signature": "ET DATA Exfiltration Large Data Chunk"},
+    {"id": 2020001, "rev": 2, "category": "Network Trojan Activity", "severity": 1, "signature": "ET TROJAN Generic C2 Traffic"},
+    {"id": 2020002, "rev": 4, "category": "Network Trojan Activity", "severity": 1, "signature": "ET TROJAN Wannacry Kill Switch Domain"},
+    {"id": 2021001, "rev": 3, "category": "A Network Trojan was detected", "severity": 1, "signature": "ET MALWARE JS/Nemucod Downloader"},
+    {"id": 2022001, "rev": 2, "category": "Potentially Bad Traffic", "severity": 2, "signature": "ET DNS Tunnel Query"},
+    {"id": 2023001, "rev": 5, "category": "Attempted Information Leak", "severity": 3, "signature": "ET PROXY HTTP Connect to Tor Bridge"},
+    {"id": 2024001, "rev": 3, "category": "Attempted User Privilege Gain", "severity": 3, "signature": "ET WEB_ATTACK XSS Attempt"},
+    {"id": 2025001, "rev": 2, "category": "Potentially Bad Traffic", "severity": 2, "signature": "ET SCAN Suspicious HTTP User-Agent"},
+    {"id": 2026001, "rev": 4, "category": "Malware Command and Control Activity", "severity": 1, "signature": "ET MALWARE Cobalt Strike Beacon"},
+    {"id": 2027001, "rev": 3, "category": "Attempted Information Leak", "severity": 2, "signature": "ET DNS Suspicious TXT Query Length"},
+    {"id": 2028001, "rev": 2, "category": "Potentially Bad Traffic", "severity": 2, "signature": "ET BEACON C2 Encrypted Traffic"}
+  ],
+  "protocols": ["TCP", "UDP", "ICMP"],
+  "event_types": ["alert", "http", "dns", "tls", "fileinfo", "flow", "stats"],
+  "http_methods": ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH"],
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "Mozilla/5.0 (X11; Linux x86_64)",
+    "python-requests/2.31.0",
+    "curl/7.88.1",
+    "Wget/1.21.3"
+  ],
+  "malicious_domains": [
+    "evil-c2.com", "malware-server.net", "phishing-landing.io",
+    "suspicious-domain.xyz", "c2-infrastructure.io", "darkweb-gateway.net"
+  ]
+}

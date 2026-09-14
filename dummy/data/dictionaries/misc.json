@@ -1,0 +1,49 @@
+{
+  "malware_families": [
+    {"name": "LockBit", "type": "ransomware", "aliases": ["LockBit 3.0"]},
+    {"name": "BlackCat", "type": "ransomware", "aliases": ["ALPHV", "Noberus"]},
+    {"name": "Emotet", "type": "trojan", "aliases": ["Heodo"]},
+    {"name": "TrickBot", "type": "trojan", "aliases": ["Trickster"]},
+    {"name": "QakBot", "type": "trojan", "aliases": ["QBot", "Pinkslipbot"]},
+    {"name": "CobaltStrike", "type": "trojan", "aliases": ["Cobalt", "CS"]},
+    {"name": "IcedID", "type": "trojan", "aliases": ["Bokbot"]},
+    {"name": "Tofsee", "type": "trojan", "aliases": ["Gheg"]},
+    {"name": "AsyncRAT", "type": "rat", "aliases": ["Async"]},
+    {"name": "AgentTesla", "type": "spyware", "aliases": ["AgenTesla", "Tesla"]},
+    {"name": "FormBook", "type": "spyware", "aliases": ["Formbook"]},
+    {"name": "RedLine", "type": "stealer", "aliases": ["RedLineStealer"]},
+    {"name": "Raccoon", "type": "stealer", "aliases": ["RaccoonStealer"]},
+    {"name": "Vidar", "type": "stealer", "aliases": ["VidarStealer"]},
+    {"name": "Ransomware", "type": "ransomware", "aliases": ["Generic"]}
+  ],
+  "threat_actors": [
+    {"name": "Lazarus", "country": "KP", "aliases": ["Hidden Cobra", "Guardians of Peace"]},
+    {"name": "APT29", "country": "RU", "aliases": ["Cozy Bear", "The Dukes"]},
+    {"name": "APT28", "country": "RU", "aliases": ["Fancy Bear", "Sofacy"]},
+    {"name": "APT41", "country": "CN", "aliases": ["Winnti", "Barium"]},
+    {"name": "APT1", "country": "CN", "aliases": ["Comment Crew", "APT1"]},
+    {"name": "FIN7", "country": "RU", "aliases": ["Carbanak", "Navigator"]},
+    {"name": "FIN6", "country": "RU", "aliases": ["Evil Corp"]},
+    {"name": "Lapsus$", "country": "BR", "aliases": ["Lapsus"]}
+  ],
+  "mitre_tactics": [
+    "reconnaissance", "resource-development", "initial-access", "execution",
+    "persistence", "privilege-escalation", "defense-evasion", "credential-access",
+    "discovery", "lateral-movement", "collection", "command-and-control",
+    "exfiltration", "impact"
+  ],
+  "mitre_techniques": [
+    {"id": "T1566", "name": "Phishing", "tactic": "initial-access"},
+    {"id": "T1059", "name": "Command and Scripting Interpreter", "tactic": "execution"},
+    {"id": "T1547", "name": "Boot or Logon Autostart Execution", "tactic": "persistence"},
+    {"id": "T1053", "name": "Scheduled Task/Job", "tactic": "persistence"},
+    {"id": "T1021", "name": "Remote Services", "tactic": "lateral-movement"},
+    {"id": "T1005", "name": "Data from Local System", "tactic": "collection"},
+    {"id": "T1041", "name": "Exfiltration Over C2 Channel", "tactic": "exfiltration"},
+    {"id": "T1486", "name": "Data Encrypted for Impact", "tactic": "impact"},
+    {"id": "T1082", "name": "System Information Discovery", "tactic": "discovery"},
+    {"id": "T1110", "name": "Brute Force", "tactic": "credential-access"},
+    {"id": "T1003", "name": "OS Credential Dumping", "tactic": "credential-access"},
+    {"id": "T1055", "name": "Process Injection", "tactic": "defense-evasion"}
+  ]
+}

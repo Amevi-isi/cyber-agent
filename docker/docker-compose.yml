@@ -1,0 +1,426 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+
+  # ── Neo4j — Graph database (corrélation d'attaques) ───────────────────────
+  neo4j:
+    image: neo4j:5.11
+    container_name: neo4j
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-testpassword}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+    ports:
+      - "7474:7474"   # Browser UI
+      - "7687:7687"   # Bolt protocol
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "${NEO4J_PASSWORD:-testpassword}", "RETURN 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - app-network
+
+  # ── ChromaDB — Vector store (mémoire sémantique des agents) ───────────────
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      PERSIST_DIRECTORY: /chroma/chroma
+      ANONYMIZED_TELEMETRY: "FALSE"
+    ports:
+      - "8000:8000"   # API HTTP
+    volumes:
+      - chroma_data:/chroma/chroma
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v2/heartbeat"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  # ── Ollama — LLM local (llama3.2 — supporte tool_use / MCP) ────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"   # API REST LLM
+    volumes:
+      - ollama_data:/root/.ollama
+    # Décommenter pour utiliser le GPU NVIDIA :
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ── Ollama Init — Télécharge llama3.2 au démarrage ───────────────────────
+  ollama_init:
+    image: ollama/ollama:latest
+    container_name: ollama_init
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["/bin/sh", "-c", "ollama pull ${OLLAMA_MODEL:-llama3.2}"]
+    networks:
+      - app-network
+    restart: "no"
+
+  # ── IRIS DFIR — Gestion des incidents (agent_reponse) ─────────────────────
+  iris_db:
+    image: postgres:14-alpine
+    container_name: iris_db
+    environment:
+      POSTGRES_USER: iris
+      POSTGRES_PASSWORD: ${IRIS_DB_PASSWORD:-iris_changeme}
+      POSTGRES_DB: iris_db
+    volumes:
+      - iris_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U iris -d iris_db"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  iris_rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: iris_rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: iris
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-rabbit_changeme}
+    ports:
+      - "15672:15672"   # Management UI (optionnel)
+    networks:
+      - app-network
+
+  iris_app:
+    image: ghcr.io/dfir-iris/iriswebapp_app:latest
+    container_name: iris_app
+    environment:
+      POSTGRES_ADDRESS: iris_db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: iris
+      POSTGRES_PASSWORD: ${IRIS_DB_PASSWORD:-iris_changeme}
+      POSTGRES_DB: iris_db
+      CELERY_BROKER: amqp://iris:${RABBITMQ_PASSWORD:-rabbit_changeme}@iris_rabbitmq
+      IRIS_SECRET_KEY: ${IRIS_SECRET_KEY:-change_this_secret_key_32chars__}
+      IRIS_SECURITY_PASSWORD_SALT: ${IRIS_SALT:-change_this_salt_value_here_____}
+      INTERFACE_HTTPS_PORT: 4433
+      ADMIN_USERNAME: ${IRIS_ADMIN_USER:-administrator}
+      ADMIN_PASSWORD: ${IRIS_ADMIN_PASSWORD:-iris_admin_changeme}
+      ADMIN_EMAIL: ${IRIS_ADMIN_EMAIL:-admin@soc.local}
+    ports:
+      - "4433:4433"   # IRIS UI (HTTPS)
+    volumes:
+      - iris_data:/home/iris/ws
+    depends_on:
+      iris_db:
+        condition: service_healthy
+      iris_rabbitmq:
+        condition: service_started
+    networks:
+      - app-network
+
+  iris_worker:
+    image: ghcr.io/dfir-iris/iriswebapp_worker:latest
+    container_name: iris_worker
+    environment:
+      POSTGRES_ADDRESS: iris_db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: iris
+      POSTGRES_PASSWORD: ${IRIS_DB_PASSWORD:-iris_changeme}
+      POSTGRES_DB: iris_db
+      CELERY_BROKER: amqp://iris:${RABBITMQ_PASSWORD:-rabbit_changeme}@iris_rabbitmq
+      IRIS_SECRET_KEY: ${IRIS_SECRET_KEY:-change_this_secret_key_32chars__}
+    volumes:
+      - iris_data:/home/iris/ws
+    depends_on:
+      iris_db:
+        condition: service_healthy
+      iris_rabbitmq:
+        condition: service_started
+    networks:
+      - app-network
+
+  # ── MISP — Threat Intelligence (agent_reponse) ────────────────────────────
+  misp_redis:
+    image: redis:7-alpine
+    container_name: misp_redis
+    networks:
+      - app-network
+
+  misp_db:
+    image: mysql:8.0
+    container_name: misp_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MISP_DB_ROOT_PASSWORD:-misp_root_changeme}
+      MYSQL_DATABASE: misp
+      MYSQL_USER: misp
+      MYSQL_PASSWORD: ${MISP_DB_PASSWORD:-misp_changeme}
+    volumes:
+      - misp_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "misp", "-p${MISP_DB_PASSWORD:-misp_changeme}"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+  misp:
+    image: ghcr.io/misp/misp-docker/misp-core:latest
+    container_name: misp
+    environment:
+      MISP_BASEURL: http://localhost:8090
+      MYSQL_HOST: misp_db
+      MYSQL_DATABASE: misp
+      MYSQL_USER: misp
+      MYSQL_PASSWORD: ${MISP_DB_PASSWORD:-misp_changeme}
+      REDIS_FQDN: misp_redis
+      MISP_ADMIN_EMAIL: ${MISP_ADMIN_EMAIL:-admin@soc.local}
+      MISP_ADMIN_PASSPHRASE: ${MISP_ADMIN_PASSWORD:-misp_admin_changeme}
+    ports:
+      - "8090:80"     # MISP UI (HTTP)
+      - "8443:443"    # MISP UI (HTTPS)
+    volumes:
+      - misp_data:/var/www/MISP
+    depends_on:
+      misp_db:
+        condition: service_healthy
+      misp_redis:
+        condition: service_started
+    networks:
+      - app-network
+
+  # ── Agent SOC — Serveurs MCP (SSE) ──────────────────────────────────────────
+  # Chaque agent expose son outil via le protocole MCP over SSE.
+  # L'orchestrateur LLM (Claude) les appelle dynamiquement selon les résultats.
+
+  agent_detection:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: agent_detection
+    command: python agents/agent_detection/server.py
+    environment:
+      AGENT_DETECTION_PORT: 8001
+      CHROMA_HOST: chroma
+      CHROMA_PORT: 8000
+      CHROMA_COLLECTION_NAME: ${CHROMA_COLLECTION_NAME:-soc_events}
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-testpassword}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-30000}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.7}
+    ports:
+      - "8001:8001"
+    depends_on:
+      chroma:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+      ollama_init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  agent_identification:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: agent_identification
+    command: python agents/agent_identification/server.py
+    environment:
+      AGENT_IDENTIFICATION_PORT: 8002
+      CHROMA_HOST: chroma
+      CHROMA_PORT: 8000
+      CHROMA_COLLECTION_NAME: ${CHROMA_COLLECTION_NAME:-soc_events}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-30000}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.7}
+    ports:
+      - "8002:8002"
+    depends_on:
+      chroma:
+        condition: service_healthy
+      ollama_init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  agent_protection:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: agent_protection
+    command: python agents/agent_protection/server.py
+    environment:
+      AGENT_PROTECTION_PORT: 8003
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-30000}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.7}
+    ports:
+      - "8003:8003"
+    depends_on:
+      ollama_init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  agent_reponse:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: agent_reponse
+    command: python agents/agent_reponse/server.py
+    environment:
+      AGENT_RESPONSE_PORT: 8004
+      IRIS_URL: ${IRIS_URL:-https://iris_app:4433}
+      IRIS_TOKEN: ${IRIS_TOKEN:-}
+      MISP_URL: ${MISP_URL:-https://misp:8443}
+      MISP_TOKEN: ${MISP_TOKEN:-}
+      FORTIGATE_URL: ${FORTIGATE_URL:-}
+      FORTIGATE_TOKEN: ${FORTIGATE_TOKEN:-}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-30000}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.7}
+    ports:
+      - "8004:8004"
+    depends_on:
+      ollama_init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  agent_recuperation:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: agent_recuperation
+    command: python agents/agent_recuperation/server.py
+    environment:
+      AGENT_RECUPERATION_PORT: 8005
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-30000}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-0.7}
+    ports:
+      - "8005:8005"
+    depends_on:
+      ollama_init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # ── SOC Orchestrator — FastAPI + LLM (Claude) ───────────────────────────────
+  # Reçoit les webhooks de n8n sur POST /analyze et pilote le pipeline MCP.
+  soc_orchestrator:
+    build:
+      context: ..
+      dockerfile: Dockerfile.agents
+    container_name: soc_orchestrator
+    command: uvicorn agents.orchestrator.api:app --host 0.0.0.0 --port 8080
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      AGENT_DETECTION_URL: http://agent_detection:8001
+      AGENT_IDENTIFICATION_URL: http://agent_identification:8002
+      AGENT_PROTECTION_URL: http://agent_protection:8003
+      AGENT_RESPONSE_URL: http://agent_reponse:8004
+      AGENT_RECUPERATION_URL: http://agent_recuperation:8005
+      AUTO_RESPOND: ${AUTO_RESPOND:-false}
+      ORCHESTRATOR_PORT: 8080
+    ports:
+      - "9000:8080"   # API HTTP → appelée par n8n
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - agent_detection
+      - agent_identification
+      - agent_protection
+      - agent_reponse
+      - agent_recuperation
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # ── n8n — Workflow Automation ─────────────────────────────────────────────────
+  # Ingestion des alertes (Wazuh/Suricata webhooks) + notification (Slack/email/Jira)
+  # UI: http://localhost:5678
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    environment:
+      N8N_HOST: ${N8N_HOST:-localhost}
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: http://${N8N_HOST:-localhost}:5678/
+      # Credentials chiffrées n8n
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:-change_this_n8n_key_32chars____}
+      # Basic auth pour protéger l'UI n8n
+      N8N_BASIC_AUTH_ACTIVE: "true"
+      N8N_BASIC_AUTH_USER: ${N8N_BASIC_AUTH_USER:-admin}
+      N8N_BASIC_AUTH_PASSWORD: ${N8N_BASIC_AUTH_PASSWORD:-n8n_changeme}
+      # URL de l'orchestrateur SOC (pour le webhook sortant)
+      SOC_ORCHESTRATOR_URL: http://soc_orchestrator:8080
+      # Notifications Slack (optionnel)
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL:-}
+      # Notifications email (optionnel)
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-soc@dzolacyber.local}
+      # Dossier de workflows persistants
+      N8N_USER_FOLDER: /home/node/.n8n
+    ports:
+      - "5678:5678"   # UI n8n
+    volumes:
+      - n8n_data:/home/node/.n8n
+      # Importer automatiquement les workflows au démarrage
+      - ../n8n:/home/node/.n8n/workflows:ro
+    depends_on:
+      soc_orchestrator:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  chroma_data:
+  ollama_data:
+  iris_db_data:
+  iris_data:
+  misp_db_data:
+  misp_data:
+  n8n_data:

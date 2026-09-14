@@ -1,0 +1,228 @@
+sources:
+  internal:
+    wazuh:
+      enabled: true
+      description: "Wazuh EDR/SIEM alerts"
+      schema_version: "4.0"
+      fields:
+        - timestamp
+        - agent_id
+        - agent_name
+        - agent_ip
+        - rule_id
+        - rule_level
+        - rule_description
+        - rule_groups
+        - rule_mitre_id
+        - decoder_name
+        - data_srcip
+        - data_dstip
+        - data_user
+        - data_command
+        - location
+        - full_log
+    
+    suricata:
+      enabled: true
+      description: "Suricata IDS/IPS events"
+      schema_version: "6.0"
+      fields:
+        - timestamp
+        - event_type
+        - src_ip
+        - src_port
+        - dest_ip
+        - dest_port
+        - proto
+        - alert_action
+        - alert_gid
+        - alert_signature_id
+        - alert_rev
+        - alert_signature
+        - alert_category
+        - alert_severity
+        - http_hostname
+        - http_url
+        - http_http_method
+        - http_user_agent
+        - dns_rrname
+        - tls_sni
+        - flow_id
+    
+    fortigate:
+      enabled: true
+      description: "FortiGate firewall logs"
+      schema_version: "7.0"
+      fields:
+        - date
+        - time
+        - devname
+        - devid
+        - logid
+        - type
+        - subtype
+        - level
+        - vd
+        - srcip
+        - srcport
+        - srcintf
+        - dstip
+        - dstport
+        - dstintf
+        - sessionid
+        - proto
+        - action
+        - policyid
+        - policytype
+        - service
+        - hostname
+        - url
+        - webfilter
+        - appcat
+        - app
+        - vpn
+        - vpntunnel
+        - user
+        - group
+        - sentbyte
+        - rcvdbyte
+        - duration
+    
+    active_directory:
+      enabled: true
+      description: "Windows Active Directory events"
+      schema_version: "10.0"
+      fields:
+        - EventID
+        - TimeCreated
+        - Computer
+        - SubjectUserSid
+        - SubjectUserName
+        - SubjectDomainName
+        - TargetUserSid
+        - TargetUserName
+        - TargetDomainName
+        - LogonType
+        - IpAddress
+        - IpPort
+        - AuthenticationPackageName
+        - LmPackageName
+        - KeyLength
+        - ProcessName
+        - CommandLine
+        - ObjectClass
+        - ObjectDN
+        - GroupName
+        - MemberName
+    
+    edr:
+      enabled: true
+      description: "Endpoint Detection and Response events"
+      schema_version: "2.0"
+      fields:
+        - event_time
+        - event_type
+        - aid
+        - hostname
+        - username
+        - process_id
+        - process_name
+        - process_path
+        - process_cmdline
+        - parent_process_name
+        - parent_process_id
+        - remote_address
+        - remote_port
+        - local_address
+        - local_port
+        - protocol
+        - file_name
+        - file_path
+        - file_hash_md5
+        - file_hash_sha256
+        - signature_status
+        - detection_name
+        - severity
+        - tactic
+        - technique
+  
+  external:
+    misp:
+      enabled: true
+      description: "Malware Information Sharing Platform"
+      schema_version: "2.4"
+      fields:
+        - event_id
+        - event_uuid
+        - event_info
+        - event_threat_level_id
+        - event_analysis
+        - event_date
+        - event_timestamp
+        - event_publish_timestamp
+        - event_published
+        - org_name
+        - orgc_name
+        - tags
+        - attribute_id
+        - attribute_type
+        - attribute_category
+        - attribute_value
+        - attribute_comment
+        - attribute_to_ids
+        - attribute_timestamp
+        - galaxy_cluster
+    
+    iris:
+      enabled: true
+      description: "DFIR-IRIS investigation cases"
+      schema_version: "1.0"
+      fields:
+        - case_id
+        - case_uuid
+        - case_name
+        - case_description
+        - case_open_date
+        - case_close_date
+        - case_status_id
+        - case_severity_id
+        - case_owner_id
+        - case_customer_id
+        - case_classification_id
+        - ioc_id
+        - ioc_value
+        - ioc_type_id
+        - ioc_description
+        - ioc_tags
+        - evidence_id
+        - evidence_uuid
+        - evidence_type
+        - evidence_filename
+        - evidence_hash
+        - evidence_size
+        - evidence_description
+    
+    ukweli:
+      enabled: true
+      description: "URL/File analysis sandbox"
+      schema_version: "1.0"
+      fields:
+        - submission_id
+        - submission_date
+        - submitter
+        - url
+        - file_name
+        - file_type
+        - file_size
+        - sha256
+        - md5
+        - analysis_status
+        - analysis_date
+        - detection_score
+        - verdict
+        - malware_family
+        - malware_type
+        - behavior_summary
+        - network_indicators
+        - file_indicators
+        - registry_indicators

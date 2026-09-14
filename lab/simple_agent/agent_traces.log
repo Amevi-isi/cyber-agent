@@ -1,0 +1,48 @@
+2026-03-05 13:58:04 | DEBUG    | Tool registered: web_search
+2026-03-05 13:58:04 | DEBUG    | Tool registered: read_file
+2026-03-05 13:58:04 | DEBUG    | Tool registered: run_python
+2026-03-05 13:58:04 | INFO     | AgentBudget started: max_steps=20, max_seconds=120.0, max_tokens=50000
+2026-03-05 13:58:04 | DEBUG    | Memory add: role=user, message_count=1
+2026-03-05 13:58:04 | INFO     | Goal Started: Find the top 3 Python web frameworks...
+2026-03-05 13:58:04 | DEBUG    | Budget check passed: steps=0, tokens=0, elapsed=0.0s
+2026-03-05 13:58:04 | DEBUG    | Memory to_api_format: 1 messages
+2026-03-05 13:58:09 | DEBUG    | Memory add: role=assistant, message_count=2
+2026-03-05 13:58:09 | INFO     | Tool Call: web_search(...)
+2026-03-05 13:58:09 | INFO     | Executing tool: web_search with args: {'query': 'top 3 Python web frameworks 2024'}
+2026-03-05 13:58:09 | DEBUG    | web_search called with query: top 3 Python web frameworks 2024
+2026-03-05 13:58:11 | DEBUG    | web_search returned 5 results
+2026-03-05 13:58:11 | DEBUG    | Tool web_search executed successfully
+2026-03-05 13:58:11 | DEBUG    | Tool Success (web_search): ### Search Results for: top 3 Python web frameworks 2024  1. **Top 8 des meilleurs frameworks Python...
+2026-03-05 13:58:11 | DEBUG    | Memory add: role=user, message_count=3
+2026-03-05 13:58:11 | DEBUG    | Budget check passed: steps=1, tokens=994, elapsed=6.6s
+2026-03-05 13:58:11 | DEBUG    | Memory to_api_format: 3 messages
+2026-03-05 13:58:14 | DEBUG    | Memory add: role=assistant, message_count=4
+2026-03-05 13:58:14 | INFO     | Tool Call: web_search(...)
+2026-03-05 13:58:14 | INFO     | Executing tool: web_search with args: {'query': 'most popular Python web frameworks ranking 2024 Django Flask FastAPI'}
+2026-03-05 13:58:14 | DEBUG    | web_search called with query: most popular Python web frameworks ranking 2024 Django Flask FastAPI
+2026-03-05 13:58:21 | DEBUG    | web_search returned 5 results
+2026-03-05 13:58:21 | DEBUG    | Tool web_search executed successfully
+2026-03-05 13:58:21 | DEBUG    | Tool Success (web_search): ### Search Results for: most popular Python web frameworks ranking 2024 Django Flask FastAPI  1. **W...
+2026-03-05 13:58:21 | DEBUG    | Memory add: role=user, message_count=5
+2026-03-05 13:58:21 | DEBUG    | Budget check passed: steps=2, tokens=2460, elapsed=17.0s
+2026-03-05 13:58:21 | DEBUG    | Memory to_api_format: 5 messages
+2026-03-05 13:58:36 | DEBUG    | Memory add: role=assistant, message_count=6
+2026-03-06 15:38:13 | DEBUG    | Tool registered: web_search
+2026-03-06 15:38:13 | DEBUG    | Tool registered: read_file
+2026-03-06 15:38:13 | DEBUG    | Tool registered: run_python
+2026-03-06 15:38:14 | INFO     | AgentBudget started: max_steps=20, max_seconds=120.0, max_tokens=50000
+2026-03-06 15:38:14 | DEBUG    | Memory add: role=user, message_count=1
+2026-03-06 15:38:14 | INFO     | Goal Started: Find the top 3 Python web frameworks...
+2026-03-06 15:38:14 | DEBUG    | Budget check passed: steps=0, tokens=0, elapsed=0.0s
+2026-03-06 15:38:14 | DEBUG    | Memory to_api_format: 1 messages
+2026-03-06 15:38:18 | DEBUG    | Memory add: role=assistant, message_count=2
+2026-03-06 15:38:18 | INFO     | Tool Call: web_search(...)
+2026-03-06 15:38:18 | INFO     | Executing tool: web_search with args: {'query': 'top 3 Python web frameworks 2024'}
+2026-03-06 15:38:18 | DEBUG    | web_search called with query: top 3 Python web frameworks 2024
+2026-03-06 15:38:21 | DEBUG    | web_search returned 5 results
+2026-03-06 15:38:21 | DEBUG    | Tool web_search executed successfully
+2026-03-06 15:38:21 | DEBUG    | Tool Success (web_search): ### Search Results for: top 3 Python web frameworks 2024  1. **The Most Popular Python Frameworks an...
+2026-03-06 15:38:21 | DEBUG    | Memory add: role=user, message_count=3
+2026-03-06 15:38:21 | DEBUG    | Budget check passed: steps=1, tokens=1022, elapsed=7.2s
+2026-03-06 15:38:21 | DEBUG    | Memory to_api_format: 3 messages
+2026-03-06 15:38:29 | DEBUG    | Memory add: role=assistant, message_count=4

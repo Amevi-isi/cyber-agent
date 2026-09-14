@@ -1,0 +1,34 @@
+{
+  "first_names": [
+    "Jean", "Marie", "Pierre", "Sophie", "Laurent", "Camille", "Thomas", "Julie",
+    "Nicolas", "Caroline", "Antoine", "Marie", "Francois", "Isabelle", "Christophe",
+    "Valerie", "Sebastien", "Nathalie", "Olivier", "Catherine", "Philippe", "Anne",
+    "Michel", "Sandrine", "David", "Laurence", "Frederic", "Sylvie", "Patrick", "Brigitte",
+    "Marc", "Virginie", "Alexandre", "Emilie", "Guillaume", "Julie", "Romain", "Claire",
+    "Kevin", "Marie", "John", "Michael", "David", "James", "Robert", "William"
+  ],
+  "last_names": [
+    "Dupont", "Martin", "Bernard", "Thomas", "Robert", "Richard", "Petit", "Dubois",
+    "Durand", "Leroy", "Moreau", "Simon", "Laurent", "Lefebvre", "Michel", "Garcia",
+    "Muller", "Wright", "Smith", "Johnson", "Williams", "Brown", "Jones", "Davis",
+    "Wilson", "Moore", "Taylor", "Anderson", "Jackson", "White", "Harris", "Clark"
+  ],
+  "departments": [
+    "IT", "Finance", "RH", "Production", "Marketing", "Commercial", "Juridique",
+    "Direction", "Recherche", "Logistique", "Qualite", "Ingenierie"
+  ],
+  "job_titles": [
+    "Developpeur", "Chef de Projet", "Analyste", "Directeur", "Responsable",
+    "Technicien", "Ingénieur", "Consultant", "Manager", "Assistant",
+    "Developer", "Security Analyst", "System Administrator", "Network Engineer"
+  ],
+  "groups": [
+    "Domain Users", "IT-Security", "VPN-Users", "Remote-Workers",
+    "Domain Admins", "Server-Admins", "Workstation-Admins", "Finance-Team",
+    "HR-Team", "Executive", "Developers", "Database-Admins"
+  ],
+  "privileged_groups": [
+    "Domain Admins", "Enterprise Admins", "Schema Admins", "Server-Admins",
+    "Backup Operators", "Account Operators"
+  ]
+}

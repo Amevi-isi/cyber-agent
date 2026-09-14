@@ -1,0 +1,113 @@
+{
+  "generation_time": "2026-03-06T15:08:27.323066Z",
+  "config": {
+    "dummy": {
+      "time_range": {
+        "start": "2026-03-05T00:00:00Z",
+        "end": "2026-03-05T23:59:59Z",
+        "realtime_mode": false
+      },
+      "volume": {
+        "wazuh_alerts_per_day": 100,
+        "suricata_events_per_hour": 100,
+        "misp_iocs_total": 100,
+        "iris_cases": 10,
+        "fortigate_logs_per_hour": 100,
+        "ad_events_per_hour": 100,
+        "edr_events_per_hour": 100,
+        "ukweli_analyses": 10
+      },
+      "correlation": {
+        "enable_timeline_consistency": true,
+        "enable_cross_source_ioc_match": true,
+        "enable_asset_user_mapping": true
+      },
+      "output": {
+        "format": "jsonl",
+        "destination": "file",
+        "path": "D:/Togo Data Lab/Projets/Dzola Cyber/DZOLA-CYBER/dummy/data"
+      },
+      "scenarios": [
+        {
+          "name": "ransomware_lockbit",
+          "probability": 0.3,
+          "enabled": true
+        },
+        {
+          "name": "phishing_bec",
+          "probability": 0.4,
+          "enabled": true
+        },
+        {
+          "name": "insider_threat",
+          "probability": 0.2,
+          "enabled": true
+        },
+        {
+          "name": "apt_lateral_movement",
+          "probability": 0.1,
+          "enabled": true
+        }
+      ]
+    },
+    "sources": {
+      "wazuh": {
+        "rules_file": "dummy/data/dictionaries/wazuh_rules.json",
+        "agents_count": 50
+      },
+      "suricata": {
+        "signatures_file": "dummy/data/dictionaries/suricata_signatures.json"
+      },
+      "fortigate": {
+        "policies_file": "dummy/data/dictionaries/fortigate_policies.json"
+      },
+      "ad": {
+        "domain": "corp.local",
+        "dc_count": 3
+      },
+      "edr": {
+        "agents_count": 100,
+        "severity_levels": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ]
+      },
+      "misp": {
+        "threat_levels": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analysis_status": [
+          0,
+          1,
+          2
+        ]
+      },
+      "assets": {
+        "server_count": 30,
+        "workstation_count": 70,
+        "network_device_count": 10
+      },
+      "users": {
+        "total_count": 150,
+        "privileged_ratio": 0.1
+      }
+    }
+  },
+  "statistics": {
+    "assets": 100,
+    "users": 150,
+    "wazuh_alerts": 100,
+    "suricata_events": 2400,
+    "fortigate_logs": 2400,
+    "ad_events": 2400,
+    "edr_events": 2400,
+    "misp_iocs": 100,
+    "iris_cases": 10,
+    "ukweli_analyses": 10
+  }
+}

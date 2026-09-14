@@ -1,0 +1,3752 @@
+[
+  {
+    "Event": {
+      "id": 87014,
+      "uuid": "805f7b7a-76c9-4063-b621-5c83b95132f5",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 3,
+      "analysis": 1,
+      "date": "2026-02-26",
+      "timestamp": 1772093181,
+      "publish_timestamp": 1772093181,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 209804,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "malware-server.net",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1772093181
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 49686,
+      "uuid": "0a8513fe-5d8c-4f1f-b788-87e1c7f50635",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-03-04",
+      "timestamp": 1772653713,
+      "publish_timestamp": 1772653713,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 798347,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "ca5c0eff2f9aad169ec0cf6e16db842a",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1772653713
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 64593,
+      "uuid": "3000c67d-b362-4833-a153-208a09430fe7",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-28",
+      "timestamp": 1772240976,
+      "publish_timestamp": 1772240976,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 394655,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "c0c5d6fee00a3a809e177f6c8be9cb9d4bb86bab37e29203c443546eeae4aa8b",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1772240976
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 83833,
+      "uuid": "9aee1b0c-6adb-4f94-b5be-cbd0a5aba436",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-03-05",
+      "timestamp": 1772703492,
+      "publish_timestamp": 1772703492,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 474156,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1772703492
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 30641,
+      "uuid": "1856abba-5383-4eb9-966e-0026d44269c7",
+      "info": "Malware Sample - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-23",
+      "timestamp": 1771843464,
+      "publish_timestamp": 1771843464,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 892472,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "dad0bce3c4a5ca4bdd305b73c472bdeaf43412bc35ffb16908cd8decd2ebe0fb",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1771843464
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 95418,
+      "uuid": "02e87d9d-23de-41bc-8871-81163edd1e14",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-14",
+      "timestamp": 1771057983,
+      "publish_timestamp": 1771057983,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 141193,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "4b41e0cc6feeaa0be9ac841f5ccc3bbe4aebbb8bad0d1abcfbbb68a2e6bcdde0",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1771057983
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 60752,
+      "uuid": "1484c285-d454-4091-981f-9c3c436d8155",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1770964535,
+      "publish_timestamp": 1770964535,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 716834,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "eaa5cec6afae8a0cb2cfe6b8dc5dfbbb6bfbd4d02dbbf16d1d4e3ab149f15dee",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770964535
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 76668,
+      "uuid": "a0f1f38d-4770-46b8-8f26-c60cc1d77917",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 3,
+      "analysis": 0,
+      "date": "2026-02-20",
+      "timestamp": 1771608594,
+      "publish_timestamp": 1771608594,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 667881,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1771608594
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 43422,
+      "uuid": "64213299-72c8-453c-a475-34de873ac472",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-12",
+      "timestamp": 1770875692,
+      "publish_timestamp": 1770875692,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 998271,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "evil-c2.com",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1770875692
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 18898,
+      "uuid": "5cb68628-48c3-4d13-b388-57071675f5cd",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-25",
+      "timestamp": 1772035568,
+      "publish_timestamp": 1772035568,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 334000,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1772035568
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 35676,
+      "uuid": "a750f3fa-4e9d-4107-bb24-ff67d0ecf749",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-22",
+      "timestamp": 1771762232,
+      "publish_timestamp": 1771762232,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 412470,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "aa20785ebeadb1050bce3d1b30af6deb",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1771762232
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 22399,
+      "uuid": "991eddb6-3c09-4d88-9c0c-17ca4cb37b09",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-10",
+      "timestamp": 1770721895,
+      "publish_timestamp": 1770721895,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 257666,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770721895
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 72736,
+      "uuid": "a49fb205-3009-423b-ad5f-df22baa242d2",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-24",
+      "timestamp": 1771971974,
+      "publish_timestamp": 1771971974,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 310546,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771971974
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 54850,
+      "uuid": "0d108f03-fa5e-488a-bcc3-08f233642d35",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-12",
+      "timestamp": 1770880099,
+      "publish_timestamp": 1770880099,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 568976,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "513e56be2eb170c5c713196d00155455",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770880099
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 33938,
+      "uuid": "a140511b-8c40-47cb-8b4e-9d762b510a3c",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-10",
+      "timestamp": 1770703446,
+      "publish_timestamp": 1770703446,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 230058,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "9a0c0cabfd8ba17cb7d7291b9dffdcae",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770703446
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 82840,
+      "uuid": "ee0cb17c-656a-4642-b789-b8f8a91344c6",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1771004830,
+      "publish_timestamp": 1771004830,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 220754,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771004830
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 23580,
+      "uuid": "7271c58b-2fe5-43c7-9203-b7c54bd91efc",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-12",
+      "timestamp": 1770867603,
+      "publish_timestamp": 1770867603,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 208121,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "c0ded1a38cd6cf478f5beedf5cd627e5905dfed28d859771a14bf5d9de4eadcd",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1770867603
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 73998,
+      "uuid": "00675ffa-fe51-4a4d-bfa8-0adf0215697c",
+      "info": "Malware Sample - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1770949870,
+      "publish_timestamp": 1770949870,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 341923,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "485d31e66f45ae46f8aaef3a5f8dca86e93fc1f4a3860fd33fcf7cb0da2c1fc5",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770949870
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 15129,
+      "uuid": "6311a47d-19ce-4284-87f7-9966f1eb18e0",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-26",
+      "timestamp": 1772129418,
+      "publish_timestamp": 1772129418,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 601141,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1772129418
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 54083,
+      "uuid": "44238948-a069-42a5-af06-7e7c46442b83",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 3,
+      "analysis": 1,
+      "date": "2026-02-13",
+      "timestamp": 1770975450,
+      "publish_timestamp": 1770975450,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 128475,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1770975450
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 97603,
+      "uuid": "e8f0fc6b-3f8a-497b-917b-23c4dd39a466",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-27",
+      "timestamp": 1772235034,
+      "publish_timestamp": 1772235034,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 941200,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "malware-server.net",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1772235034
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 73895,
+      "uuid": "a831a02f-760d-43a3-aa16-e53487d45bc7",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-27",
+      "timestamp": 1772164299,
+      "publish_timestamp": 1772164299,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 793066,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "a55a22817786bcefb84f2375fbbda4ea",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1772164299
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 55172,
+      "uuid": "c375b61f-f3b6-4922-ab5a-190ea453410f",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-19",
+      "timestamp": 1771513524,
+      "publish_timestamp": 1771513524,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 275250,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771513524
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 14689,
+      "uuid": "dade6384-6396-4071-a1ec-5b1d8f5f75f3",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-04",
+      "timestamp": 1770240726,
+      "publish_timestamp": 1770240726,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 766688,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.50",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770240726
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 93457,
+      "uuid": "846516d4-6b18-4b0c-bfcf-2c15513a46a0",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-05",
+      "timestamp": 1770285373,
+      "publish_timestamp": 1770285373,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 992169,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "6c713ed33a8aec024c3c50eef8b0f9cce97e2f5ff648695ed36c1fad1cbbdafa",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770285373
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 76494,
+      "uuid": "76ab26f4-98a1-4651-8a28-44f20d24d53d",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-25",
+      "timestamp": 1772047450,
+      "publish_timestamp": 1772047450,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 418026,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "dfa7aaa3f2f657ed4bb4d266c2c50fda",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1772047450
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 72118,
+      "uuid": "bb6d4466-da78-4cb9-b6e1-daab44eb854f",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-10",
+      "timestamp": 1770681689,
+      "publish_timestamp": 1770681689,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 257947,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1770681689
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 46988,
+      "uuid": "27c521ef-4609-406c-95af-3af291ebb6b3",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1770979604,
+      "publish_timestamp": 1770979604,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 806278,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "0e30eef8b3bb2f1a0ef3d3ac47aba482",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770979604
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 49853,
+      "uuid": "4df0ae25-80ca-44e6-a985-48aa0d84b2c0",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-18",
+      "timestamp": 1771373757,
+      "publish_timestamp": 1771373757,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 947414,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771373757
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 29640,
+      "uuid": "06cd4700-2d1c-4f04-9182-4bf1e12c8888",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 1,
+      "analysis": 0,
+      "date": "2026-02-05",
+      "timestamp": 1770283172,
+      "publish_timestamp": 1770283172,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 391228,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "malware-server.net",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1770283172
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 38851,
+      "uuid": "6a396166-5b00-456b-8e66-3e1220bc3b28",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 2,
+      "analysis": 1,
+      "date": "2026-03-01",
+      "timestamp": 1772407236,
+      "publish_timestamp": 1772407236,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 454395,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1772407236
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 72041,
+      "uuid": "2df17714-35b0-4558-9a7d-a9178f19cb15",
+      "info": "Malware Sample - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-24",
+      "timestamp": 1771935185,
+      "publish_timestamp": 1771935185,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 214591,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "e0af556ee6cbffdcc5be92c7faeb6f2e",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1771935185
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:lockbit"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 85285,
+      "uuid": "0c57265c-e479-47e5-a998-7ee011bcb77d",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-08",
+      "timestamp": 1770594659,
+      "publish_timestamp": 1770594659,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 737307,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770594659
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 59605,
+      "uuid": "be439489-d209-4649-9abb-cb52687b9f59",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-19",
+      "timestamp": 1771487082,
+      "publish_timestamp": 1771487082,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 708467,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771487082
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 98419,
+      "uuid": "557615fa-c6d4-4a20-97a7-5a65b92c320e",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-19",
+      "timestamp": 1771510738,
+      "publish_timestamp": 1771510738,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 958789,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1771510738
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 93916,
+      "uuid": "20cc324c-0502-49ef-9bde-8f7dc381db77",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-28",
+      "timestamp": 1772308544,
+      "publish_timestamp": 1772308544,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 684484,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "ecaa15f6bfb3e5e9efdabbeff4a10278",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1772308544
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 48125,
+      "uuid": "1c11c271-f4fb-4a02-87ed-de187e1a4253",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 1,
+      "analysis": 0,
+      "date": "2026-02-23",
+      "timestamp": 1771830377,
+      "publish_timestamp": 1771830377,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 941325,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "evil-c2.com",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771830377
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 69525,
+      "uuid": "6082307e-a12a-4342-99e4-8e410245e9d1",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-15",
+      "timestamp": 1771114329,
+      "publish_timestamp": 1771114329,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 371192,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771114329
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 13716,
+      "uuid": "02b73c59-5d8c-4d4b-b442-f68475f1f893",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-17",
+      "timestamp": 1771300525,
+      "publish_timestamp": 1771300525,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 172645,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771300525
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 46740,
+      "uuid": "6b642230-a6ef-4e80-9deb-50ec6d5ffa87",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-26",
+      "timestamp": 1772082730,
+      "publish_timestamp": 1772082730,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 221802,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1772082730
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 34014,
+      "uuid": "76dc88fb-bee3-46ad-8f60-54cf53272d97",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-26",
+      "timestamp": 1772091258,
+      "publish_timestamp": 1772091258,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 972584,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1772091258
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 65592,
+      "uuid": "a2201c4c-5fc2-4f3c-b56e-6b3214acf865",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-23",
+      "timestamp": 1771834225,
+      "publish_timestamp": 1771834225,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 667055,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771834225
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 37995,
+      "uuid": "971729ba-c316-4c2a-80ae-e93943f06a9e",
+      "info": "Malware Sample - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-09",
+      "timestamp": 1770637799,
+      "publish_timestamp": 1770637799,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 334904,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "e7846ecb4e5140c4ff4f0ababaf0b3f9d0fa2f5bdadfa2ee993fe0e52adcd4f4",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1770637799
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 99768,
+      "uuid": "3e47809e-368e-4875-9b3d-622967914243",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-06",
+      "timestamp": 1770367693,
+      "publish_timestamp": 1770367693,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 229910,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1770367693
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 38749,
+      "uuid": "671a01a1-7d83-495a-873a-a8710212d08c",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-22",
+      "timestamp": 1771765645,
+      "publish_timestamp": 1771765645,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 127920,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "529f5ecdeaea3565be8a05a047a5c050b09f50db51abcdc8cadabc7fc9b794fa",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1771765645
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 60957,
+      "uuid": "991ad58f-6d78-4d30-a8d1-36b7ab108e5f",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-24",
+      "timestamp": 1771936495,
+      "publish_timestamp": 1771936495,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 707163,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "f654f89d6ec764a2bed0ddbcddfcbb94",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1771936495
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 52475,
+      "uuid": "59fbe608-b0ef-4c4f-a948-dd49514bb126",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-03-01",
+      "timestamp": 1772389422,
+      "publish_timestamp": 1772389422,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 676302,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1772389422
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 72645,
+      "uuid": "aee8ca44-0869-45ae-8b16-81041508fb52",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-20",
+      "timestamp": 1771630423,
+      "publish_timestamp": 1771630423,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 694530,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.50",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1771630423
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 74410,
+      "uuid": "ab5d83ad-d206-4cd7-baad-46c735071525",
+      "info": "Malware Sample - LockBit",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-12",
+      "timestamp": 1770936580,
+      "publish_timestamp": 1770936580,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 785924,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "c62d0dcaac4f0bc82edc1fc14d2be1da",
+      "comment": "Malware sample - Emotet",
+      "to_ids": true,
+      "timestamp": 1770936580
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 64301,
+      "uuid": "0f0dfea6-9614-4859-a134-92aa4395efa5",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-24",
+      "timestamp": 1771897103,
+      "publish_timestamp": 1771897103,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 635178,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771897103
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 19670,
+      "uuid": "4809de01-3ae4-4b39-a75a-50a71fc7360f",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-22",
+      "timestamp": 1771755778,
+      "publish_timestamp": 1771755778,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 525056,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771755778
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 45025,
+      "uuid": "eb9244bc-90c9-428d-ae8e-036a1183ae21",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-17",
+      "timestamp": 1771332162,
+      "publish_timestamp": 1771332162,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 865422,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771332162
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 85409,
+      "uuid": "99e85979-be9d-496b-9ad3-2317cda5959a",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-06",
+      "timestamp": 1770390795,
+      "publish_timestamp": 1770390795,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 231878,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770390795
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 36688,
+      "uuid": "53cc53b9-3804-4139-9cdd-a817c13c555a",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 1,
+      "analysis": 0,
+      "date": "2026-02-26",
+      "timestamp": 1772141797,
+      "publish_timestamp": 1772141797,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 427489,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1772141797
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 53438,
+      "uuid": "cb62b410-86c1-4017-9511-2f1d5bd36739",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-18",
+      "timestamp": 1771404244,
+      "publish_timestamp": 1771404244,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 754207,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771404244
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 58834,
+      "uuid": "7ada280b-4bd5-41e4-a716-87c82f2327fe",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-19",
+      "timestamp": 1771514791,
+      "publish_timestamp": 1771514791,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 630456,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1771514791
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 35759,
+      "uuid": "c0693d12-a4b3-4468-b170-00865bf31a3a",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 1,
+      "date": "2026-02-26",
+      "timestamp": 1772128811,
+      "publish_timestamp": 1772128811,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 304967,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1772128811
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 24854,
+      "uuid": "39539871-5500-4fce-9deb-d2d21decfa45",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-18",
+      "timestamp": 1771423354,
+      "publish_timestamp": 1771423354,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 654713,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771423354
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 35269,
+      "uuid": "19ad9c1a-34c6-494d-922e-f40ac6fc36ab",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-23",
+      "timestamp": 1771841591,
+      "publish_timestamp": 1771841591,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 921467,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1771841591
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 94664,
+      "uuid": "ac0fa32e-3b35-41d1-8a59-4eb4b05ef98e",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-03-01",
+      "timestamp": 1772388577,
+      "publish_timestamp": 1772388577,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 213718,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1772388577
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 46292,
+      "uuid": "fee24834-cb27-4051-815b-a8eab70da8b1",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-10",
+      "timestamp": 1770755735,
+      "publish_timestamp": 1770755735,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 125544,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770755735
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 58124,
+      "uuid": "79d07aa7-e7d2-48b0-b343-28a7ba8f9013",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-07",
+      "timestamp": 1770440578,
+      "publish_timestamp": 1770440578,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 120897,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770440578
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 31898,
+      "uuid": "6e180547-f02d-4169-84eb-557150eb327a",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 1,
+      "analysis": 0,
+      "date": "2026-02-21",
+      "timestamp": 1771643263,
+      "publish_timestamp": 1771643263,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 965116,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1771643263
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 14842,
+      "uuid": "adcccfb4-1b4e-4828-97be-bed433019de0",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-26",
+      "timestamp": 1772149085,
+      "publish_timestamp": 1772149085,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 154759,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1772149085
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 49937,
+      "uuid": "ad9fbfeb-b09a-4df6-bfee-f51602ec8b06",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-26",
+      "timestamp": 1772111370,
+      "publish_timestamp": 1772111370,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 188832,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1772111370
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 99574,
+      "uuid": "dafb9a88-d608-4f4a-a9d7-67540d7da547",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-17",
+      "timestamp": 1771366856,
+      "publish_timestamp": 1771366856,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 213313,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771366856
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 89518,
+      "uuid": "28be9c48-1e57-4e2a-88f7-221f18844ce2",
+      "info": "Malware Sample - Emotet",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-21",
+      "timestamp": 1771699953,
+      "publish_timestamp": 1771699953,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 883265,
+      "type": "md5",
+      "category": "Payload delivery",
+      "value": "edba8cc2bb47adc201c96dbfa4ccb385",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1771699953
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:trickbot"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 38980,
+      "uuid": "1068808d-573e-4538-9361-ad79dde2fef7",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-20",
+      "timestamp": 1771547323,
+      "publish_timestamp": 1771547323,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 152418,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771547323
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 95104,
+      "uuid": "50a03303-6473-4ea6-bc93-55b602597fa7",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-08",
+      "timestamp": 1770575873,
+      "publish_timestamp": 1770575873,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 836191,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770575873
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 16936,
+      "uuid": "6b25424f-47df-4cb4-8627-3e4b7947712e",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 2,
+      "analysis": 1,
+      "date": "2026-02-13",
+      "timestamp": 1770985228,
+      "publish_timestamp": 1770985228,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 281873,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1770985228
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 97532,
+      "uuid": "425d315c-8ffe-417c-ae2f-39ba0790053e",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-10",
+      "timestamp": 1770713213,
+      "publish_timestamp": 1770713213,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 226742,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "malware-server.net",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1770713213
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 55590,
+      "uuid": "77dc577c-218b-4bb4-858b-73178e2f1d27",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-22",
+      "timestamp": 1771797190,
+      "publish_timestamp": 1771797190,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 838690,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771797190
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 34171,
+      "uuid": "b8a3d209-5401-4af9-83f4-77f7328c28d4",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-25",
+      "timestamp": 1772039658,
+      "publish_timestamp": 1772039658,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 322337,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1772039658
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 63447,
+      "uuid": "311b471e-023f-44b5-b56f-c57969a0107a",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-25",
+      "timestamp": 1772032286,
+      "publish_timestamp": 1772032286,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 354811,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1772032286
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 84046,
+      "uuid": "883775b9-19c0-4164-8da9-2ebf5060b01d",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 3,
+      "analysis": 0,
+      "date": "2026-02-21",
+      "timestamp": 1771649630,
+      "publish_timestamp": 1771649630,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 806655,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771649630
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 61976,
+      "uuid": "784d0985-1c4a-477e-b000-0ae00d356866",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-18",
+      "timestamp": 1771396367,
+      "publish_timestamp": 1771396367,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 763999,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771396367
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 75659,
+      "uuid": "099268c9-d635-4d27-81ba-08c4f0ff0c28",
+      "info": "Malware Sample - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-12",
+      "timestamp": 1770880228,
+      "publish_timestamp": 1770880228,
+      "published": true,
+      "Org": {
+        "name": "MalwareBazaar"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 420100,
+      "type": "sha256",
+      "category": "Payload delivery",
+      "value": "cdecd185d04dffb1c53ebbdba1248cb7448c41bab7af61e5cafbbed63aedd970",
+      "comment": "Malware sample - LockBit",
+      "to_ids": true,
+      "timestamp": 1770880228
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:emotet"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 72976,
+      "uuid": "7f6cd0d0-8a43-461f-8604-9701013f4004",
+      "info": "C2 Infrastructure - LockBit",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-20",
+      "timestamp": 1771585520,
+      "publish_timestamp": 1771585520,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 722893,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771585520
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 34228,
+      "uuid": "5b4f943b-0f7e-457e-bc4a-97c390b3654e",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 3,
+      "analysis": 0,
+      "date": "2026-02-14",
+      "timestamp": 1771101898,
+      "publish_timestamp": 1771101898,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 350845,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "evil-c2.com",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771101898
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 86531,
+      "uuid": "14cfd8d8-198f-43ed-a7de-55f8acc9efe0",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 2,
+      "analysis": 1,
+      "date": "2026-02-21",
+      "timestamp": 1771647316,
+      "publish_timestamp": 1771647316,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 360745,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771647316
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 84709,
+      "uuid": "0c82e9f8-dd24-4c0d-94f4-143e0d39641c",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1770983047,
+      "publish_timestamp": 1770983047,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 710777,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770983047
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 93769,
+      "uuid": "f9320db2-0c8e-4b19-bfe9-21d2174e467b",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-13",
+      "timestamp": 1770988662,
+      "publish_timestamp": 1770988662,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 507664,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770988662
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 70601,
+      "uuid": "821ae89b-45a2-41ba-9aff-56ab02006265",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 1,
+      "analysis": 0,
+      "date": "2026-02-24",
+      "timestamp": 1771914775,
+      "publish_timestamp": 1771914775,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 924545,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1771914775
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 95982,
+      "uuid": "f1ecfa55-4830-4c4b-8e7a-022f873b0ee5",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-09",
+      "timestamp": 1770650524,
+      "publish_timestamp": 1770650524,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 775196,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1770650524
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 48847,
+      "uuid": "164c3ef2-a6e3-416d-91f0-9915677e97ed",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-09",
+      "timestamp": 1770665674,
+      "publish_timestamp": 1770665674,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 206989,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770665674
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 69379,
+      "uuid": "83f22945-649c-454a-85b8-b139222752b5",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-21",
+      "timestamp": 1771641352,
+      "publish_timestamp": 1771641352,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 177515,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1771641352
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 70755,
+      "uuid": "e11684be-56ab-4d12-b292-0dbd3d2de0f9",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-17",
+      "timestamp": 1771298008,
+      "publish_timestamp": 1771298008,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 297075,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771298008
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 49394,
+      "uuid": "8d3d77a2-0b62-4247-a633-65890a93b8eb",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 2,
+      "analysis": 2,
+      "date": "2026-02-11",
+      "timestamp": 1770820797,
+      "publish_timestamp": 1770820797,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 500681,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770820797
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 59886,
+      "uuid": "a9556504-5a1f-4b5d-85bd-8c3efe8bde52",
+      "info": "Malicious Domain - phishing",
+      "threat_level_id": 3,
+      "analysis": 0,
+      "date": "2026-02-19",
+      "timestamp": 1771527755,
+      "publish_timestamp": 1771527755,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 417103,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "evil-c2.com",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771527755
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 76952,
+      "uuid": "992814d7-419b-4980-b190-883667e2769d",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-04",
+      "timestamp": 1770199511,
+      "publish_timestamp": 1770199511,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 639963,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770199511
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 99536,
+      "uuid": "a8f368ff-2c4f-40e8-9de2-eb3ec0aa6720",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-16",
+      "timestamp": 1771236521,
+      "publish_timestamp": 1771236521,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 179708,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "suspicious-domain.xyz",
+      "comment": "Malicious domain - C2",
+      "to_ids": true,
+      "timestamp": 1771236521
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:emotet"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 56690,
+      "uuid": "6155895e-81da-4c5e-a59d-b5bfeff26d9d",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-03-03",
+      "timestamp": 1772553439,
+      "publish_timestamp": 1772553439,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 163528,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://evil-c2.com/downloads/invoice.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1772553439
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 23755,
+      "uuid": "89de455e-ecb1-485e-af9a-9a638cd1bce8",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-04",
+      "timestamp": 1770195952,
+      "publish_timestamp": 1770195952,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 417812,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1770195952
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 56823,
+      "uuid": "2d708763-5bfa-4f58-b16a-142e101c2447",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 2,
+      "analysis": 0,
+      "date": "2026-02-25",
+      "timestamp": 1771991916,
+      "publish_timestamp": 1771991916,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 908534,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771991916
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 30478,
+      "uuid": "08079782-c62e-4c40-8fc8-64ee24e3f643",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-08",
+      "timestamp": 1770553536,
+      "publish_timestamp": 1770553536,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 589405,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "185.220.101.42",
+      "comment": "C2 server - Emotet",
+      "to_ids": true,
+      "timestamp": 1770553536
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 14628,
+      "uuid": "25f548df-85b9-4ab9-a258-c609253f263d",
+      "info": "Malicious Domain - c2",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-24",
+      "timestamp": 1771923454,
+      "publish_timestamp": 1771923454,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 318941,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "phishing-landing.io",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771923454
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 39366,
+      "uuid": "fda965ae-4636-4840-8fd2-7bf883039684",
+      "info": "Malware Hosting URL",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-21",
+      "timestamp": 1771648271,
+      "publish_timestamp": 1771648271,
+      "published": true,
+      "Org": {
+        "name": "URLhaus"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 183193,
+      "type": "url",
+      "category": "Payload delivery",
+      "value": "http://malware-server.net/downloads/update.exe",
+      "comment": "Malware download URL",
+      "to_ids": true,
+      "timestamp": 1771648271
+    },
+    "Tag": [
+      {
+        "name": "tlp:red"
+      },
+      {
+        "name": "malware:dropper"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 62281,
+      "uuid": "cbeb0ee6-dfa1-4423-8cc5-8eeb0f81ecf9",
+      "info": "C2 Infrastructure - Emotet",
+      "threat_level_id": 2,
+      "analysis": 1,
+      "date": "2026-02-06",
+      "timestamp": 1770375645,
+      "publish_timestamp": 1770375645,
+      "published": true,
+      "Org": {
+        "name": "ThreatFox"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 505760,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "91.121.87.10",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1770375645
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 36946,
+      "uuid": "afb3ee2a-eb9f-4965-8d38-10827166fe78",
+      "info": "Malicious Domain - exfiltration",
+      "threat_level_id": 1,
+      "analysis": 1,
+      "date": "2026-02-19",
+      "timestamp": 1771537630,
+      "publish_timestamp": 1771537630,
+      "published": true,
+      "Org": {
+        "name": "AlienVault"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 635876,
+      "type": "domain",
+      "category": "Network activity",
+      "value": "evil-c2.com",
+      "comment": "Malicious domain - phishing",
+      "to_ids": true,
+      "timestamp": 1771537630
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:lockbit"
+      },
+      {
+        "name": "csirt:malware:domain"
+      }
+    ]
+  },
+  {
+    "Event": {
+      "id": 42710,
+      "uuid": "d9ecddb3-1446-472d-8179-07735aab134c",
+      "info": "C2 Infrastructure - TrickBot",
+      "threat_level_id": 1,
+      "analysis": 2,
+      "date": "2026-02-19",
+      "timestamp": 1771480657,
+      "publish_timestamp": 1771480657,
+      "published": true,
+      "Org": {
+        "name": "CIRCL"
+      },
+      "Orgc": {
+        "name": "ThreatIntelTeam"
+      }
+    },
+    "Attribute": {
+      "id": 668514,
+      "type": "ip-dst",
+      "category": "Network activity",
+      "value": "45.142.212.100",
+      "comment": "C2 server - LockBit",
+      "to_ids": true,
+      "timestamp": 1771480657
+    },
+    "Tag": [
+      {
+        "name": "tlp:amber"
+      },
+      {
+        "name": "malware:trickbot"
+      },
+      {
+        "name": "csirt:malware:c2"
+      }
+    ]
+  }
+]

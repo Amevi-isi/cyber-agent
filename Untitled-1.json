@@ -1,0 +1,50 @@
+{
+    "submission_id": "sub_327699076",
+    "submission_date": "2026-02-28T10:20:59Z",
+    "submitter": "fortigate",
+    "url": "http://evil-c2.com/downloads/invoice.pdf.exe",
+    "file_name": "script.ps1",
+    "file_type": "application/pdf",
+    "file_size": 910537,
+    "sha256": "ef3f8ed9fff0f3fca3ca35afd9fff549efad90bfa3b9ccc57bddaabaaf0c7c98",
+    "md5": "637f2ed3ebaa16acbbdaec8a3eed0fa9",
+    "analysis_status": "completed",
+    "analysis_date": "2026-02-28T10:20:59Z",
+    "detection_score": 88,
+    "verdict": "suspicious",
+    "malware_family": "QakBot",
+    "malware_type": "trojan",
+    "behavior_summary": [
+        "defense-evasion",
+        "lateral-movement",
+        "credential-access",
+        "network-communication",
+        "process-injection"
+    ],
+    "network_indicators": [
+        {
+            "ip": "45.142.212.100",
+            "port": 80,
+            "protocol": "http",
+            "direction": "inbound"
+        }
+    ],
+    "file_indicators": [
+        {
+            "path": "C:\\Users\\Public\\Downloads\\payload.exe",
+            "operation": "modified"
+        }
+    ],
+    "registry_indicators": [
+        {
+            "key": "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "value": "update.bat"
+        }
+    ],
+    "screenshots": [
+        "https://sandbox.example.com/94980/screen1.png",
+        "https://sandbox.example.com/66614/screen2.png",
+        "https://sandbox.example.com/36294/screen3.png"
+    ],
+    "report_url": "https://sandbox.example.com/report/78928"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "classification": "suspicious",
+    "attack_type": "none",
+    "mitre_tactic": "unknown",
+    "mitre_technique": "unknown",
+    "severity": "medium",
+    "confidence": 60,
+    "event_type": "network",
+    "affected_asset": "192.168.1.15",
+    "event_time": "",
+    "iocs": {
+      "ip": [
+        "192.168.1.15"
+      ],
+      "domain": [],
+      "hash": [],
+      "user": []
+    },
+    "evidence_extract": "Similar past events detected, all with the same alert type and source IP address (192.168.1.15), indicating a potential scanning activity."
+  },
+  {
+    "classification": "suspicious",
+    "attack_type": "brute force",
+    "mitre_tactic": "TA0006",
+    "mitre_technique": "T1110",
+    "severity": "medium",
+    "confidence": 60,
+    "event_type": "login",
+    "affected_asset": "server1",
+    "event_time": "2026-03-05T07:48:26Z",
+    "iocs": {
+      "ip": [
+        "unknown"
+      ],
+      "domain": [],
+      "hash": [],
+      "user": []
+    },
+    "evidence_extract": "Multiple failed SSH login attempts on server1, with Wazuh rule 'sshd: authentication failed' triggered."
+  }
+]

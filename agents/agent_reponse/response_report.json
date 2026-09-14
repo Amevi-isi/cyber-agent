@@ -1,0 +1,24 @@
+{
+  "actions_executed": [],
+  "errors": [
+    {
+      "tool": "iris",
+      "action": "create_case",
+      "error": "HTTPSConnectionPool(host='localhost', port=4433): Max retries exceeded with url: /api/v1/cases/add (Caused by NewConnectionError(\"HTTPSConnection(host='localhost', port=4433): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    },
+    {
+      "tool": "misp",
+      "action": "submit_ioc",
+      "ip": "185.220.101.5",
+      "error": "HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /events (Caused by NewConnectionError(\"HTTPSConnection(host='localhost', port=8443): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    },
+    {
+      "tool": "fortigate",
+      "action": "block_ip",
+      "ip": "185.220.101.5",
+      "error": "HTTPSConnectionPool(host='fortigate.company.com', port=443): Max retries exceeded with url: /api/v2/cmdb/firewall/address (Caused by NameResolutionError(\"HTTPSConnection(host='fortigate.company.com', port=443): Failed to resolve 'fortigate.company.com' ([Errno -2] Name or service not known)\"))"
+    }
+  ],
+  "total_success": 0,
+  "total_errors": 3
+}

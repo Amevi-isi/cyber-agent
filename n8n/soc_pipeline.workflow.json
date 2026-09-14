@@ -1,0 +1,260 @@
+{
+  "name": "SOC DZOLACYBER — Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "security-event",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "node_webhook_wazuh",
+      "name": "Webhook — Security Event",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "notes": "Reçoit les événements POST de Wazuh, Suricata, FortiGate, EDR.\nURL: http://n8n:5678/webhook/security-event"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "check_source",
+              "leftValue": "={{ $json.body }}",
+              "rightValue": "",
+              "operator": { "type": "object", "operation": "notEmpty" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "node_validate",
+      "name": "Validate Event",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SOC_ORCHESTRATOR_URL }}/analyze",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ event: $json.body }) }}",
+        "options": {
+          "timeout": 300000,
+          "response": { "response": { "neverError": true } }
+        }
+      },
+      "id": "node_orchestrator_call",
+      "name": "SOC Orchestrator — Analyze",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 260],
+      "notes": "Envoie l'événement au LLM Orchestrateur (Claude + agents MCP)"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'queued', message: 'Invalid event: body missing' } }}",
+        "options": { "responseCode": 400 }
+      },
+      "id": "node_reject",
+      "name": "Reject — Invalid",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false },
+          "conditions": [
+            {
+              "id": "check_verdict",
+              "leftValue": "={{ $json.verdict }}",
+              "rightValue": "confirmed_incident",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "node_route_verdict",
+      "name": "Route — Verdict",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [900, 260],
+      "notes": "confirmed_incident → alertes urgentes\nautres → log simple"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "severity",
+              "name": "severity",
+              "value": "={{ $json.stages?.detect_event?.severity ?? 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "confidence",
+              "name": "confidence",
+              "value": "={{ $json.stages?.detect_event?.confidence ?? 0 }}",
+              "type": "number"
+            },
+            {
+              "id": "attack_type",
+              "name": "attack_type",
+              "value": "={{ $json.stages?.detect_event?.attack_type ?? 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "incident_id",
+              "name": "incident_id",
+              "value": "={{ $json.stages?.identify_incident?.incident_id ?? 'INC-UNKNOWN' }}",
+              "type": "string"
+            },
+            {
+              "id": "victim_assets",
+              "name": "victim_assets",
+              "value": "={{ ($json.stages?.identify_incident?.victim_assets ?? []).join(', ') }}",
+              "type": "string"
+            },
+            {
+              "id": "analysis_summary",
+              "name": "analysis_summary",
+              "value": "={{ $json.stages?.identify_incident?.analysis_summary ?? $json.final_analysis }}",
+              "type": "string"
+            },
+            {
+              "id": "stages_executed",
+              "name": "stages_executed",
+              "value": "={{ ($json.stages_executed ?? []).join(' → ') }}",
+              "type": "string"
+            },
+            {
+              "id": "source",
+              "name": "source",
+              "value": "={{ $json.event?.source ?? 'unknown' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node_extract_fields",
+      "name": "Extract Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.SLACK_WEBHOOK_URL }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"text\": \"🚨 *INCIDENT CONFIRMÉ — SOC DZOLACYBER*\",\n  \"attachments\": [\n    {\n      \"color\": \"{% if $('Extract Fields').item.json.severity == 'critical' %}#FF0000{% elif $('Extract Fields').item.json.severity == 'high' %}#FF6600{% else %}#FFAA00{% endif %}\",\n      \"fields\": [\n        { \"title\": \"Incident ID\", \"value\": \"{{ $('Extract Fields').item.json.incident_id }}\", \"short\": true },\n        { \"title\": \"Severity\", \"value\": \"{{ $('Extract Fields').item.json.severity | upper }}\", \"short\": true },\n        { \"title\": \"Confidence\", \"value\": \"{{ $('Extract Fields').item.json.confidence }}%\", \"short\": true },\n        { \"title\": \"Attack Type\", \"value\": \"{{ $('Extract Fields').item.json.attack_type }}\", \"short\": true },\n        { \"title\": \"Source\", \"value\": \"{{ $('Extract Fields').item.json.source }}\", \"short\": true },\n        { \"title\": \"Assets Affected\", \"value\": \"{{ $('Extract Fields').item.json.victim_assets }}\", \"short\": true },\n        { \"title\": \"Pipeline\", \"value\": \"{{ $('Extract Fields').item.json.stages_executed }}\", \"short\": false },\n        { \"title\": \"Summary\", \"value\": \"{{ $('Extract Fields').item.json.analysis_summary }}\", \"short\": false }\n      ]\n    }\n  ]\n}",
+        "options": { "timeout": 10000 }
+      },
+      "id": "node_slack_alert",
+      "name": "Slack — Incident Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1340, 160],
+      "notes": "Envoie l'alerte dans le canal SOC Slack.\nConfigurer SLACK_WEBHOOK_URL dans .env"
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.SMTP_FROM }}",
+        "toEmail": "={{ $env.SOC_EMAIL_RECIPIENT }}",
+        "subject": "=[SOC] {{ $('Extract Fields').item.json.severity | upper }} — {{ $('Extract Fields').item.json.incident_id }} — {{ $('Extract Fields').item.json.attack_type }}",
+        "emailFormat": "html",
+        "html": "=<h2 style=\"color:#cc0000;\">🚨 Incident de sécurité confirmé</h2>\n<table border=\"1\" cellpadding=\"5\">\n  <tr><td><b>Incident ID</b></td><td>{{ $('Extract Fields').item.json.incident_id }}</td></tr>\n  <tr><td><b>Sévérité</b></td><td>{{ $('Extract Fields').item.json.severity | upper }}</td></tr>\n  <tr><td><b>Confiance</b></td><td>{{ $('Extract Fields').item.json.confidence }}%</td></tr>\n  <tr><td><b>Type d'attaque</b></td><td>{{ $('Extract Fields').item.json.attack_type }}</td></tr>\n  <tr><td><b>Source</b></td><td>{{ $('Extract Fields').item.json.source }}</td></tr>\n  <tr><td><b>Assets affectés</b></td><td>{{ $('Extract Fields').item.json.victim_assets }}</td></tr>\n  <tr><td><b>Pipeline exécuté</b></td><td>{{ $('Extract Fields').item.json.stages_executed }}</td></tr>\n</table>\n<h3>Résumé</h3>\n<p>{{ $('Extract Fields').item.json.analysis_summary }}</p>",
+        "options": {}
+      },
+      "id": "node_email_alert",
+      "name": "Email — Incident Alert",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1340, 300],
+      "notes": "Envoi email aux analystes SOC.\nConfigurer SMTP_* et SOC_EMAIL_RECIPIENT dans .env"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'ok', verdict: $json.verdict, stages_executed: $json.stages_executed } }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "node_respond_ok",
+      "name": "Respond — OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1340, 440]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'ok', verdict: $json.verdict, stages_executed: $json.stages_executed, note: 'No escalation required' } }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "node_respond_benign",
+      "name": "Respond — Benign",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1120, 380]
+    }
+  ],
+  "connections": {
+    "Webhook — Security Event": {
+      "main": [[ { "node": "Validate Event", "type": "main", "index": 0 } ]]
+    },
+    "Validate Event": {
+      "main": [
+        [ { "node": "SOC Orchestrator — Analyze", "type": "main", "index": 0 } ],
+        [ { "node": "Reject — Invalid", "type": "main", "index": 0 } ]
+      ]
+    },
+    "SOC Orchestrator — Analyze": {
+      "main": [[ { "node": "Route — Verdict", "type": "main", "index": 0 } ]]
+    },
+    "Route — Verdict": {
+      "main": [
+        [ { "node": "Extract Fields", "type": "main", "index": 0 } ],
+        [ { "node": "Respond — Benign", "type": "main", "index": 0 } ]
+      ]
+    },
+    "Extract Fields": {
+      "main": [
+        [
+          { "node": "Slack — Incident Alert", "type": "main", "index": 0 },
+          { "node": "Email — Incident Alert", "type": "main", "index": 0 },
+          { "node": "Respond — OK", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "dzolacyber-soc"
+  },
+  "pinData": {},
+  "versionId": "1.0.0",
+  "triggerCount": 0,
+  "tags": ["soc", "dzolacyber", "security"]
+}

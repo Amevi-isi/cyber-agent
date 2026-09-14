@@ -1,0 +1,225 @@
+[
+  {
+    "event": {
+      "source": "wazuh",
+      "rule": "multiple failed ssh login",
+      "agent": "server1",
+      "src_ip": "185.220.101.5",
+      "user": "root",
+      "timestamp": "2026-04-02T10:23:11Z",
+      "attempts": 47
+    },
+    "stages": {
+      "detection": {
+        "classification": "suspicious",
+        "attack_type": "brute force",
+        "mitre_tactic": "TA0006",
+        "mitre_technique": "T1110",
+        "severity": "medium",
+        "confidence": 70,
+        "event_type": "login",
+        "affected_asset": "server1",
+        "event_time": "2026-04-02T10:23:11Z",
+        "iocs": {
+          "ip": [
+            "185.220.101.5"
+          ],
+          "domain": [],
+          "hash": [],
+          "user": [
+            "root"
+          ]
+        },
+        "evidence_extract": "Multiple failed SSH login attempts with root credentials from IP address 185.220.101.5 on server1"
+      },
+      "identification": {
+        "incident_id": "INC-AUTO",
+        "threat_actor": "unknown",
+        "scope": "contained",
+        "attack_chain": [
+          {
+            "step": "Brute force login attempt with root credentials"
+          }
+        ],
+        "victim_assets": [
+          {
+            "host": "server1",
+            "service": "SSH",
+            "user": [
+              "root"
+            ]
+          }
+        ],
+        "timeline": [
+          {
+            "event_time": "2026-04-02T10:23:11Z"
+          }
+        ],
+        "enriched_iocs": {
+          "ip": [
+            "185.220.101.5"
+          ],
+          "domain": [],
+          "hash": [],
+          "user": [
+            "root"
+          ]
+        },
+        "related_events": [],
+        "confidence": 70,
+        "analysis_summary": ""
+      },
+      "protection": {
+        "urgency": "immediate",
+        "firewall_rules": [
+          {
+            "action": "block",
+            "direction": "inbound",
+            "src_ip": "185.220.101.5",
+            "dst_port": null,
+            "protocol": "any",
+            "reason": "Malicious IP address attempted brute force login"
+          }
+        ],
+        "edr_actions": [
+          {
+            "action": "isolate",
+            "asset": "server1",
+            "reason": "Server compromised by unknown threat actor via brute force login"
+          }
+        ],
+        "account_actions": [
+          {
+            "action": "disable",
+            "user": "root",
+            "reason": "Root credentials used in brute force login attempt"
+          }
+        ],
+        "network_segments_to_block": [],
+        "monitoring_rules": [
+          {
+            "rule_id": "",
+            "signature": "Brute force SSH login attempt with root credentials",
+            "severity": "high"
+          }
+        ],
+        "containment_summary": "Containment efforts focus on isolating compromised server, blocking malicious IP address, and disabling compromised user account."
+      }
+    },
+    "pipeline_stopped_at": "complete",
+    "verdict": "suspicious",
+    "response_note": "Stages 4/5 not executed. Set auto_respond=True or trigger agent_reponse/agent_recuperation manually."
+  },
+  {
+    "event": {
+      "source": "suricata",
+      "alert": "ET MALWARE CnC Beacon",
+      "src_ip": "192.168.1.42",
+      "dest_ip": "185.220.101.5",
+      "dest_port": 443,
+      "severity": 1,
+      "timestamp": "2026-04-02T10:30:00Z"
+    },
+    "stages": {
+      "detection": {
+        "classification": "suspicious",
+        "attack_type": "malware",
+        "mitre_tactic": "TA0005",
+        "mitre_technique": "T1003",
+        "severity": "medium",
+        "confidence": 60,
+        "event_type": "network",
+        "affected_asset": "192.168.1.42",
+        "event_time": "2026-04-02T10:30:00Z",
+        "iocs": {
+          "ip": [
+            "185.220.101.5"
+          ],
+          "domain": [],
+          "hash": [],
+          "user": []
+        },
+        "evidence_extract": "Malware CnC beacon detected on IP 192.168.1.42, communicating with 185.220.101.5:443"
+      },
+      "identification": {
+        "incident_id": "INC-AUTO",
+        "threat_actor": "unknown",
+        "scope": "spreading",
+        "attack_chain": [
+          {
+            "step": "Brute force login attempt with root credentials"
+          },
+          {
+            "step": "Malware deployment (CnC beacon) on affected asset 192.168.1.42"
+          }
+        ],
+        "victim_assets": [
+          {
+            "host": "192.168.1.42",
+            "service": "",
+            "user": []
+          },
+          {
+            "host": "server1",
+            "service": "SSH",
+            "user": [
+              "root"
+            ]
+          }
+        ],
+        "timeline": [
+          {
+            "event_time": "2026-04-02T10:23:11Z"
+          },
+          {
+            "event_time": "2026-04-02T10:30:00Z"
+          }
+        ],
+        "enriched_iocs": {
+          "ip": [
+            "185.220.101.5",
+            "192.168.1.42"
+          ],
+          "domain": [],
+          "hash": [],
+          "user": [
+            "root"
+          ]
+        },
+        "related_events": [
+          {
+            "classification": "suspicious",
+            "attack_type": "brute force",
+            "mitre_tactic": "TA0006",
+            "mitre_technique": "T1110",
+            "severity": "medium",
+            "confidence": 70,
+            "event_type": "login",
+            "affected_asset": "server1",
+            "event_time": "2026-04-02T10:23:11Z",
+            "iocs": {
+              "ip": [
+                "185.220.101.5"
+              ],
+              "domain": [],
+              "hash": [],
+              "user": [
+                "root"
+              ]
+            },
+            "evidence_extract": "Multiple failed SSH login attempts with root credentials from IP address 185.220.101.5 on server1"
+          }
+        ],
+        "confidence": 60,
+        "analysis_summary": ""
+      },
+      "protection": {
+        "raw": "Based on the incident analysis, I will generate precise, actionable containment recommendations.\n\n**Urgency:** immediate\n\n**Firewall Rules:**\n\n1. Block inbound traffic from IP address `185.220.101.5` to any port:\n\t* {\n\t\t\"action\": \"block\",\n\t\t\"direction\": \"inbound\",\n\t\t\"src_ip\": \"185.220.101.5\",\n\t\t\"dst_port\": null,\n\t\t\"protocol\": \"any\",\n\t\t\"reason\": \"Malicious IP address detected\"\n\t}\n\n**EDR Actions:**\n\n1. Isolate `192.168.1.42`:\n\t* {\n\t\t\"action\": \"isolate\",\n\t\t\"asset\": \"192.168.1.42\",\n\t\t\"reason\": \"Malware deployment detected on this asset\"\n\t}\n2. Isolate `server1`:\n\t* {\n\t\t\"action\": \"isolate\",\n\t\t\"asset\": \"server1\",\n\t\t\"reason\": \"Brute force login attempt with root credentials detected on this asset\"\n\t}\n\n**Account Actions:**\n\n1. Disable user `root`:\n\t* {\n\t\t\"action\": \"disable\",\n\t\t\"user\": \"root\",\n\t\t\"reason\": \"Malicious activity detected using this account\"\n\t}\n\n**Monitoring Rules:**\n\n1. Monitor for login attempts with root credentials on `server1`:\n\t* (SIEM/IDS signature to tune)\n\n**Containment Summary:** The incident involves a brute force login attempt with root credentials and malware deployment, indicating a malicious actor is attempting to gain access and potentially spread laterally. Containment measures are necessary to prevent further compromise.\n\nNote: These recommendations prioritize the highest-risk assets first and only generate actions directly supported by the incident evidence.",
+        "_parse_error": true
+      }
+    },
+    "pipeline_stopped_at": "complete",
+    "verdict": "suspicious",
+    "response_note": "Stages 4/5 not executed. Set auto_respond=True or trigger agent_reponse/agent_recuperation manually."
+  }
+]
